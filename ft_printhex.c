@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <unistd.h>
-int ft_count(unsigned int h)
-{
-    int i = 0;
-    while(h)
-    {
-        h /= 10;
-        i++;
-    }
-    return i;
-}
+// int ft_count(unsigned int h)
+// {
+//     int i = 0;
+//     while(h)
+//     {
+//         h /= 10;
+//         i++;
+//     }
+//     return i;
+// }
 void ft_upplow(unsigned int h, char type)
 {
     int out = 0;

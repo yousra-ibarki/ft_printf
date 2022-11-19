@@ -1,16 +1,15 @@
-#include<unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-int ft_count(unsigned int nb)
-{
-    int i = 0;
-    while(nb)
-    {
-        nb /= 10;
-        i++;
-    }
-    return i;
-}
+#include "ft_printf.h"
+
+// int ft_count(unsigned int nb)
+// {
+//     int i = 0;
+//     while(nb)
+//     {
+//         nb /= 10;
+//         i++;
+//     }
+//     return i;
+// }
 
 int ft_printunsigned(unsigned int nb)
 {

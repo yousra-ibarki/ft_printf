@@ -1,6 +1,6 @@
-#include <unistd.h>
-#include <stdio.h>
-int ft_count(int p)
+#include "ft_printf.h"
+
+int ftt_count(int p)
 {
     int n = 1;
     int i = 0;
