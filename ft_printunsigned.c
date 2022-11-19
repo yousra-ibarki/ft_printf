@@ -10,11 +10,9 @@
 //     }
 //     return i;
 // }
-
 int ft_printunsigned(unsigned int nb)
 {
     int len = ft_count(nb);
-    printf("len is %d\n", len);
     char *nbr;
     int i = 0;
     nbr = malloc(sizeof(char) * (len + 1));

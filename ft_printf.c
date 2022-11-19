@@ -1,10 +1,9 @@
 #include "ft_printf.h"
 
-static int ft_checkformat(const char c, va_list *varin)
+static int checkformat(const char c, va_list *varin)
 {
     int len = 0;
-    if(c == '%')
-    {
+    
         if(c == 'c')
             len += ft_putchar(va_arg(*varin, int));
         else if(c == 's')
@@ -19,7 +18,7 @@ static int ft_checkformat(const char c, va_list *varin)
             len += ft_printhex(va_arg(*varin, unsigned int), c);
         else if(c == '%')
             len += ft_putchar('%');
-    }
+    
     return len;
 }
 
@@ -31,9 +30,17 @@ int ft_printf(const char *s, ...)
     va_start(varin, s);
     while(s[i])
     {
-        len += ft_checkformat(s[i], varin);
+        if(s[i] == '%')
+        {
+            len += checkformat(s[i+1], &varin);
+        }
         i++;
     }
     va_end(varin);
     return len;
+}
+int main()
+{
+    char s[] = "hello";
+    ft_printf("%s %d", s, 3);
 }

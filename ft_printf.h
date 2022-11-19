@@ -6,7 +6,7 @@
 #include <stdlib.h>
 char	*ft_itoa(int n);
 int ft_printf(const char *s, ...);
-static int ft_checkformat(char c, va_list varin);
+//static int checkformat(char c, va_list *varin);
 int ftt_count(int p);
 int ft_printp(int p);
 void ft_upplow(unsigned int h, char type);

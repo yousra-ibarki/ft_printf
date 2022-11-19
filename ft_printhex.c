@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "ft_printf.h"
 // int ft_count(unsigned int h)
 // {
 //     int i = 0;

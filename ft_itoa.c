@@ -80,7 +80,7 @@ char	*ft_itoa(int n)
 	char	*ptr;
 
 	i = 0;
-	len = ft_count(n);
+	len = ft_countf(n);
 	ptr = malloc((sizeof(char) * len + 1));
 	if (!ptr)
 		return (0);
