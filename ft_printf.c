@@ -1,22 +1,22 @@
 #include "ft_printf.h"
 
-static int ft_checkformat(char c, va_list varin)
+static int ft_checkformat(const char c, va_list *varin)
 {
     int len = 0;
     if(c == '%')
     {
         if(c == 'c')
-            len += ft_putchar(va_arg(varin, int));
+            len += ft_putchar(va_arg(*varin, int));
         else if(c == 's')
-            len += ft_prints(va_arg(varin, char *));
+            len += ft_prints(va_arg(*varin, char *));
         else if(c == 'p')
-            len += ft_printp(va_arg(varin, int));
+            len += ft_printp(va_arg(*varin, int));
         else if(c == 'd' || c == 'i')
-            len += ft_printnb(va_arg(varin, int));
+            len += ft_printnb(va_arg(*varin, int));
         else if(c == 'u')
-            len += ft_printunsigned(va_arg(varin, unsigned int));
+            len += ft_printunsigned(va_arg(*varin, unsigned int));
         else if(c == 'x' || c == 'X')
-            len += ft_printhex(va_arg(varin, unsigned int), c);
+            len += ft_printhex(va_arg(*varin, unsigned int), c);
         else if(c == '%')
             len += ft_putchar('%');
     }

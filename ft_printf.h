@@ -17,6 +17,4 @@ int ft_prints(char *str);
 int ft_printnb(int nb);
 int ft_count(unsigned int h);
 
-
-
 #endif
