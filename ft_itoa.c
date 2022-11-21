@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	ft_countf(int number)
+static int	ft_countt(int number)
 {
 	long	i;
 	long	c;
@@ -49,6 +49,8 @@ static char	*ifneg(char *ptr, int nbr, int len)
 			nbr /= 10;
 		}
 	}
+	else
+		ptr[1] = nbr + '0';
 	return (ptr);
 }
 
@@ -80,10 +82,12 @@ char	*ft_itoa(int n)
 	char	*ptr;
 
 	i = 0;
-	len = ft_countf(n);
+	if (n == -2147483648)
+		return (ptr = ft_strdup("-2147483648"));
+	len = ft_countt(n);
 	ptr = malloc((sizeof(char) * len + 1));
 	if (!ptr)
-		return (0);
+		return (NULL);
 	ft_tochar(ptr, n, len);
 	return (ptr);
 }

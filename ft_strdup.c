@@ -1,69 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fcthelp.c                                       :+:      :+:    :+:   */
+/*   ft_strdub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoibarki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 15:16:33 by yoibarki          #+#    #+#             */
-/*   Updated: 2022/11/19 15:16:35 by yoibarki         ###   ########.fr       */
+/*   Created: 2022/11/21 05:45:58 by yoibarki          #+#    #+#             */
+/*   Updated: 2022/11/21 05:57:38 by yoibarki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int a)
-{
-	write(1, &a, 1);
-	return (1);
-}
-
-int	ft_prints(char *str)
+static size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	if (str == NULL)
+	while (s[i])
 	{
-		ft_prints("(null)");
-		return (6);
-	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);
 }
 
-int	ft_printnb(int nb)
+static char	*strrcpy(const char *src, char *dst)
 {
-	int		i;
-	char	*n;
+	size_t	i;
 
 	i = 0;
-	n = ft_itoa(nb);
-	while (n[i])
+	while (src[i])
 	{
-		write(1, &n[i], 1);
+		dst[i] = src[i];
 		i++;
 	}
-	free(n);
-	return (i);
+	dst[i] = '\0';
+	return (dst);
 }
 
-
-int	ft_count(unsigned int h)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
+	int		len;
+	char	*arr;
 
-	i = 0;
-	if (!h)
-		return (1);
-	while (h)
-	{
-		h /= 10;
-		i++;
-	}
-	return (i);
+	len = ft_strlen(s1);
+	arr = malloc(len * sizeof(char) + 1);
+	if (arr == 0)
+		return (0);
+	arr = strrcpy(s1, arr);
+	return (arr);
 }

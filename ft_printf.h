@@ -13,6 +13,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <limits.h>
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -29,5 +30,6 @@ int		ft_putchar(int a);
 int		ft_prints(char *str);
 int		ft_printnb(int nb);
 int		ft_count(unsigned int h);
+char	*ft_strdup(const char *s1);
 
 #endif
