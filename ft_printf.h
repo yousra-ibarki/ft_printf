@@ -23,7 +23,7 @@ char	*ft_itoa(int n);
 int		ft_printf(const char *s, ...);
 int		ftt_count(unsigned long long p);
 int		ft_printp(unsigned long long p);
-void	ft_upplow(unsigned int h, char type);
+//void	ft_upplow(unsigned int h, char type);
 int		ft_printhex(unsigned int h, char type);
 int		ft_printunsigned(unsigned int nb);
 int		ft_putchar(int a);

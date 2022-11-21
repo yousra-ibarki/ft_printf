@@ -11,7 +11,20 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+static int	ft_ccount(unsigned int h)
+{
+	int	i;
 
+	i = 0;
+	if (!h)
+		return (1);
+	while (h)
+	{
+		h /= 16;
+		i++;
+	}
+	return (i);
+}
 void	ft_upplow(unsigned int h, char type)
 {
 	int	out;
@@ -34,7 +47,7 @@ int	ft_printhex(unsigned int h, char type)
 	int	len;
 	int	out;
 
-	len = ft_count(h);
+	len = ft_ccount(h);
 	out = 0;
 	if (h >= 16)
 	{

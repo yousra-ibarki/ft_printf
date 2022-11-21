@@ -57,10 +57,11 @@ int	ft_printf(const char *s, ...)
 		i++;
 	}
 	va_end(varin);
+	printf("%d", len);
 	return (len);
 }
-// int	main(void)
-// {
-// 	ft_printf(" %x \n", 0);
-// 	printf(" %x ", 0);
-// }
+int	main(void)
+{
+	 ft_printf("%x", -10);
+	//printf(" %x ", 0);
+}
