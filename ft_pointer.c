@@ -12,16 +12,16 @@
 
 #include "ft_printf.h"
 
-int	ftt_count(unsigned long long p)
+static int	ftt_count(unsigned long long h)
 {
-	unsigned long long	n;
-	int					i;
+	int	i;
 
-	n = 1;
 	i = 0;
-	while (n <= p)
+	if (!h)
+		return (1);
+	while (h)
 	{
-		n *= 10;
+		h /= 16;
 		i++;
 	}
 	return (i);
@@ -54,15 +54,15 @@ int	ft_printp(unsigned long long p)
 	int	len;
 	int	out;
 
-	len = 0;
+	len = 2;
 	out = 0;
-	len += write(1, "0x", 2);
+	write(1, "0x", 2);
 	if (p == 0)
 	{
-		len += write(1, "0", 1);
+		len += ft_putchar('0');
 		return (len);
 	}
 	else
 		ft_check(p);
-	return (ft_count(p) + len);
+	return (ftt_count(p) + len);
 }

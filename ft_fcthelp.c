@@ -52,7 +52,6 @@ int	ft_printnb(int nb)
 	return (i);
 }
 
-
 int	ft_count(unsigned int h)
 {
 	int	i;

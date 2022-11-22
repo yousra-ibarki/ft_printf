@@ -42,7 +42,3 @@ int	ft_printunsigned(unsigned int nb)
 	free(nbr);
 	return (len);
 }
-// int main()
-// {
-//     ft_printunsigned(21);
-// }

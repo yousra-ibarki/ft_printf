@@ -59,8 +59,3 @@ int	ft_printf(const char *s, ...)
 	va_end(varin);
 	return (len);
 }
-// int	main(void)
-// {
-// 	ft_printf(" %x \n", 0);
-// 	printf(" %x ", 0);
-// }
